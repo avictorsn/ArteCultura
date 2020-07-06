@@ -1,0 +1,29 @@
+<div fxLayoutAlign="center center">
+  <form class="login-form" fxFlex="50" fxLayout="column" #loginForm="ngForm"  novalidate>
+    <mat-form-field appearance="outline">
+      <mat-label for="staticEmail">Organizador</mat-label>
+      <input matInput type="text" ngModel name="email" id="staticEmail" placeholder="Organizador">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label for="staticEmail">Nome do Evento</mat-label>
+      <input matInput type="text" ngModel name="email" id="staticEmail" placeholder="Nome do Evento">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label for="inputPassword" >Descrição</mat-label>
+      <textarea matInput matTextareaAutosize matAutosizeMinRows="5" matAutosizeMaxRows="5" ngModel name="description" id="inputDescription"></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label for="inputPassword" >Local</mat-label>
+      <input matInput type="text" ngModel  name="password" id="inputPassword" placeholder="Local">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label for="inputPassword" >Data</mat-label>
+      <input matInput type="date" ngModel  name="password" id="inputPassword" placeholder="Data">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label for="inputPassword" >Horário</mat-label>
+      <input matInput type="time" ngModel  name="password" id="inputPassword" placeholder="HH:MM">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Registrar</button>
+  </form>
+</div>

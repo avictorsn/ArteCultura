@@ -1,0 +1,21 @@
+<mat-sidenav-container>
+  <mat-sidenav opened mode="side">
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['/index', {outlets: {listOutlet: ['search']}}]">
+        <mat-icon mat-list-icon color="primary">search</mat-icon>
+        Pesquisar Evento
+      </a>
+      <a mat-list-item [routerLink]="['/index', {outlets: {listOutlet: ['new']}}]">
+        <mat-icon mat-list-icon color="primary">add_circle</mat-icon>
+        Cadastrar Evento
+      </a>
+      <a mat-list-item [routerLink]="['/index', {outlets: {listOutlet: ['list']}}]" routerLinkActive="active">
+        <mat-icon mat-list-icon color="primary">event_note</mat-icon>
+        Lista de Eventos
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet name="listOutlet"></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -7,7 +7,7 @@ const initialState: User = {
   email:    'adm@gmail.com'
 };
 
-export function reducer ( state: User = initialState, action: UserActions.Actions) {
+export function reducer( state: User = initialState, action: UserActions.Actions) {
   switch (action.type) {
     case UserActions.SIGNUP:
       return {

@@ -3,7 +3,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './routers/app-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { GraphQLModule } from './graphql.module';
 import { MaterialsModule } from './materials/materials.module';
@@ -21,6 +21,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { EventFormComponent } from './components/event-form/event-form.component';
+import { EventSearchComponent } from './components/event-search/event-search.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     LoginPageComponent,
     EventsListComponent,
     NavbarComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    SidenavComponent,
+    EventFormComponent,
+    EventSearchComponent
   ],
   imports: [
     BrowserModule,
