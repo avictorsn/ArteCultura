@@ -1,0 +1,17 @@
+<form class="login-form" fxLayoutAlign="stretch" fxLayout="column" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" novalidate>
+  <mat-form-field appearance="outline">
+    <mat-label for="staticEmail">E-mail</mat-label>
+    <input matInput type="text" ngModel name="email" id="staticEmail" placeholder="E-mail">
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="outline">
+    <mat-label for="inputPassword" >Senha</mat-label>
+    <input matInput resizeToFitContent type="password" ngModel  name="password" id="inputPassword" placeholder="Password">
+  </mat-form-field>
+  <br>
+  <button mat-raised-button color="primary" type="submit">Entrar</button>
+  <!-- <div>
+    {{ (user$ | async).name }}
+    {{ (user$ | async).email }}
+  </div> -->
+</form>

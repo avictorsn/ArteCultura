@@ -1,0 +1,8 @@
+<mat-list>
+  <div mat-subheader>Eventos Registrados</div>
+  <mat-list-item *ngFor="let event of events">
+    <mat-icon mat-list-icon color="primary">event</mat-icon>
+    <div mat-line>{{event.organizer}} - {{event.event_name}}</div>
+    <div mat-line>{{event.hours}}:{{event.minutes}}</div>
+  </mat-list-item>
+</mat-list>

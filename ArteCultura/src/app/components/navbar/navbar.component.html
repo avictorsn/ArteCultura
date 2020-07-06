@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <span>ArteCultura</span>
+  <span class="example-spacer"></span>
+  <span class="mat-body">{{ (user$ | async).name }}</span>
+  <button mat-icon-button aria-label="Account icon" [matMenuTriggerFor]="menu">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="prepareLogout()">Sair</button>
+  </mat-menu>
+</mat-toolbar>
