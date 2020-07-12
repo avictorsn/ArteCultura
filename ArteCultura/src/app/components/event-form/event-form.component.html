@@ -1,28 +1,30 @@
 <div fxLayoutAlign="center center">
-  <form class="login-form" fxFlex="50" fxLayout="column" #loginForm="ngForm"  novalidate>
+  <form class="login-form" fxFlex="50" fxLayout="column" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" novalidate>
     <mat-form-field appearance="outline">
-      <mat-label for="staticEmail">Organizador</mat-label>
-      <input matInput type="text" ngModel name="email" id="staticEmail" placeholder="Organizador">
+      <mat-label for="organizer">Organizador</mat-label>
+      <input matInput type="text" ngModel name="organizer" id="organizer" placeholder="Organizador">
     </mat-form-field>
     <mat-form-field appearance="outline">
-      <mat-label for="staticEmail">Nome do Evento</mat-label>
-      <input matInput type="text" ngModel name="email" id="staticEmail" placeholder="Nome do Evento">
+      <mat-label for="eventName">Nome do Evento</mat-label>
+      <input matInput type="text" ngModel name="eventName" id="eventName" placeholder="Nome do Evento">
     </mat-form-field>
     <mat-form-field appearance="outline">
-      <mat-label for="inputPassword" >Descrição</mat-label>
-      <textarea matInput matTextareaAutosize matAutosizeMinRows="5" matAutosizeMaxRows="5" ngModel name="description" id="inputDescription"></textarea>
+      <mat-label for="description" >Descrição</mat-label>
+      <textarea matInput matTextareaAutosize matAutosizeMinRows="5" matAutosizeMaxRows="5" ngModel name="description" id="description"></textarea>
     </mat-form-field>
     <mat-form-field appearance="outline">
-      <mat-label for="inputPassword" >Local</mat-label>
-      <input matInput type="text" ngModel  name="password" id="inputPassword" placeholder="Local">
+      <mat-label for="local" >Local</mat-label>
+      <input matInput type="text" ngModel  name="local" id="local" placeholder="Local">
     </mat-form-field>
     <mat-form-field appearance="outline">
-      <mat-label for="inputPassword" >Data</mat-label>
-      <input matInput type="date" ngModel  name="password" id="inputPassword" placeholder="Data">
+      <mat-label>Choose a date</mat-label>
+      <input matInput name="date" id="date" ngModel [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
     <mat-form-field appearance="outline">
-      <mat-label for="inputPassword" >Horário</mat-label>
-      <input matInput type="time" ngModel  name="password" id="inputPassword" placeholder="HH:MM">
+      <mat-label for="time" >Horário</mat-label>
+      <input matInput type="time" ngModel  name="time" id="time" placeholder="HH:MM">
     </mat-form-field>
     <button mat-raised-button color="primary" type="submit">Registrar</button>
   </form>

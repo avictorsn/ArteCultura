@@ -45,14 +45,15 @@ module.exports.eventMutationResolvers = {
       description:  { type: new GraphQLNonNull(GraphQLString) },
       date:         { type: new GraphQLNonNull(GraphQLDate)   },
       local:        { type: new GraphQLNonNull(GraphQLString) },
-      hours:        { type: new GraphQLNonNull(GraphQLInt)    },
-      minutes:      { type: new GraphQLNonNull(GraphQLInt)    }
+      time:         { type: new GraphQLNonNull(GraphQLString) }
     },
     resolve(parent, args) {
+      console.log('Trying to create event...');
       let event = new Event({
         _id:          new mongoose.Types.ObjectId(),
         ...args
       });
+      console.log(event);
       return event.save();
     }
   },
@@ -66,8 +67,7 @@ module.exports.eventMutationResolvers = {
       description:  { type: new GraphQLNonNull(GraphQLString) },
       date:         { type: new GraphQLNonNull(GraphQLDate)   },
       local:        { type: new GraphQLNonNull(GraphQLString) },
-      hours:        { type: new GraphQLNonNull(GraphQLInt)    },
-      minutes:      { type: new GraphQLNonNull(GraphQLInt)    }
+      time:         { type: new GraphQLNonNull(GraphQLString) }
     },
     resolve(parent, args) {
       let event = new Event({
@@ -76,8 +76,7 @@ module.exports.eventMutationResolvers = {
         description:  args.description,
         date:         args.date,
         local:        args.local,
-        hours:        args.hours,
-        minutes:      args.minutes
+        time:         args.time
       });
       return Event.findByIdAndUpdate(args.id, event);
     }

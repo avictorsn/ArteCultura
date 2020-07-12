@@ -8,6 +8,5 @@ export class Event {
   description: string;
   date: Date;
   local: string;
-  hours: number;
-  minutes: number;
+  time: string;
 }

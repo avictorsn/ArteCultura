@@ -23,13 +23,11 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit() {
     this.user$ = this.store.select('user');
-    console.log(this.user$);
   }
 
   onSubmit(loginForm: NgForm) {
     this.store.dispatch(new Signup({username: 'ok', name: 'Victor', email: loginForm.value.email}));
     this.authService.login(loginForm.value.email, loginForm.value.password).subscribe((result) => {
-      console.log(result.data['login']);
       if (!!result.data['login']['token']) {
         this.store.dispatch(new Authorize({
           userId: result.data['login']['userId'],

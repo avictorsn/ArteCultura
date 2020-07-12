@@ -8,8 +8,7 @@ const eventSchema = new Schema({
   description: String,
   date: Date,
   local: String,
-  hours: Number,
-  minutes: Number
+  time: String
 });
 
 module.exports = mongoose.model('Event', eventSchema);

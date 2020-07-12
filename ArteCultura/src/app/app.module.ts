@@ -1,3 +1,4 @@
+import { EventService } from './services/event.service';
 import { TokenInterceptor } from './auth/token.interceptor';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,6 +25,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { EventFormComponent } from './components/event-form/event-form.component';
 import { EventSearchComponent } from './components/event-search/event-search.component';
+import { EventDetailComponent } from './components/event-detail/event-detail.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { EventSearchComponent } from './components/event-search/event-search.com
     LoginFormComponent,
     SidenavComponent,
     EventFormComponent,
-    EventSearchComponent
+    EventSearchComponent,
+    EventDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +56,7 @@ import { EventSearchComponent } from './components/event-search/event-search.com
   ],
   providers: [
     AuthService,
+    EventService,
     AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
@@ -60,6 +64,10 @@ import { EventSearchComponent } from './components/event-search/event-search.com
       multi: true
     }
   ],
+  entryComponents: [
+    EventDetailComponent
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

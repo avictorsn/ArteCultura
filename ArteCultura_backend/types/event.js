@@ -16,7 +16,6 @@ module.exports = new GraphQLObjectType({
     description:  { type: GraphQLString },
     date:         { type: GraphQLDate   },
     local:        { type: GraphQLString },
-    hours:        { type: GraphQLInt    },
-    minutes:      { type: GraphQLInt    }
+    time:         { type: GraphQLString }
   })
 });
